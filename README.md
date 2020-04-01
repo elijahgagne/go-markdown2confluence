@@ -1,3 +1,5 @@
+[![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/justmiles/go-markdown2confluence) 
+
 # markdown2confluence
 Push markdown files to Confluence Cloud
 
