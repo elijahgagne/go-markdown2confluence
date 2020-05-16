@@ -38,6 +38,7 @@ type Markdown2Confluence struct {
 	Password       string
 	Endpoint       string
 	Parent         string
+	Origin         string
 	SourceMarkdown []string
 	client         *confluence.Client
 }

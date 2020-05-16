@@ -49,6 +49,10 @@ func (f *MarkdownFile) Upload(m *Markdown2Confluence) (url string, err error) {
 		return url, fmt.Errorf("unable to render content from %s: %s", f.Path, err)
 	}
 
+	if m.Origin != "" {
+		wikiContent = strings.Replace(infoHeader, "__ORIGIN__", "https://git.dartmouth.edu/infrastructure-projects/documentation", 2) + wikiContent
+	}
+
 	if m.Debug {
 		fmt.Println("---- RENDERED CONTENT START ---------------------------------")
 		fmt.Println(wikiContent)
@@ -218,4 +222,8 @@ const defaultAncestorPage = `
       <ac:parameter ac:name="sort">title</ac:parameter>
    </ac:structured-macro>
 </p>
+`
+
+const infoHeader = `
+<ac:structured-macro ac:name="info" ac:schema-version="1"><ac:rich-text-body><p>Note: This page is maintained at <a href="__ORIGIN__">__ORIGIN__</a>.</p></ac:rich-text-body></ac:structured-macro>
 `
