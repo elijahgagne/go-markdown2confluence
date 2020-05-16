@@ -50,7 +50,7 @@ func (f *MarkdownFile) Upload(m *Markdown2Confluence) (url string, err error) {
 	}
 
 	if m.Origin != "" {
-		wikiContent = strings.Replace(infoHeader, "__ORIGIN__", "https://git.dartmouth.edu/infrastructure-projects/documentation", 2) + wikiContent
+		wikiContent = strings.Replace(infoHeader, "__ORIGIN__", m.Origin, 2) + wikiContent
 	}
 
 	if m.Debug {
