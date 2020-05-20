@@ -33,6 +33,7 @@ type Markdown2Confluence struct {
 	File           string
 	Ancestor       string
 	Debug          bool
+	SkipHeaderLine bool
 	Since          int
 	Username       string
 	Password       string

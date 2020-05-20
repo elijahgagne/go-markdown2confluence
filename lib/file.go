@@ -41,6 +41,16 @@ func (f *MarkdownFile) Upload(m *Markdown2Confluence) (url string, err error) {
 		fmt.Println(f.Path)
 	}
 
+	if m.SkipHeaderLine {
+		datArray := strings.Split(strings.Replace(string(dat), "\r\n", "\n", -1), "\n")
+		if len(datArray[0]) > 2 && datArray[0][0] == '#' && datArray[0][1] == ' ' {
+			copy(datArray[0:], datArray[1:])
+			datArray[len(datArray)-1] = ""
+			datArray = datArray[:len(datArray)-1]
+			dat = []byte(strings.Join(datArray[:], "\n"))
+		}
+	}
+
 	wikiContent := string(dat)
 	var images []string
 	wikiContent, images, err = renderContent(f.Path, wikiContent)
