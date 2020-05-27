@@ -261,6 +261,7 @@ func renderContent(filePath, s string) (content string, images []string, err err
 		goldmark.WithRendererOptions(
 			html.WithHardWraps(),
 			html.WithXHTML(),
+			html.WithUnsafe(),
 		),
 		goldmark.WithExtensions(
 			confluenceExtension,

@@ -5,7 +5,7 @@ import (
 )
 
 // version of markdown2confluence. Overwritten during build
-var version = "0.0.0"
+var version = "3.1.1-2020_05_27"
 
 func main() {
 	cmd.Execute(version)

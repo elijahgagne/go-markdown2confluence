@@ -12,8 +12,8 @@ Download the [latest release](https://github.com/justmiles/go-markdown2confluenc
 
 - OSX
 
-      curl -LO https://github.com/justmiles/go-markdown2confluence/releases/download/v3.1.1/go-markdown2confluence_3.1.1_darwin_x86_64.tar.gz
-      sudo tar -xzvf go-markdown2confluence_3.1.1_darwin_x86_64.tar.gz -C /usr/local/bin/ markdown2confluence
+      curl -LO https://github.com/elijahgagne/go-markdown2confluence/releases/download/3.1.1-2020_05_27/go-markdown2confluence_3.1.1-2020_05_27_darwin_x86_64.tar.gz
+      sudo tar -xzvf go-markdown2confluence_3.1.1-2020_05_27_darwin_x86_64.tar.gz -C /usr/local/bin/ markdown2confluence
 
 - Windows
   - Download [the latest release](https://github.com/justmiles/go-markdown2confluence/releases/download/v3.1.1/go-markdown2confluence_3.1.1_windows_x86_64.tar.gz) and add to your system `PATH`
@@ -36,8 +36,10 @@ For best practice we recommend you [authenticate using an API token](https://id.
     -d, --debug                Enable debug logging
     -e, --endpoint string      Confluence endpoint. (Alternatively set CONFLUENCE_ENDPOINT environment variable) (default "https://mydomain.atlassian.net/wiki")
     -h, --help                 help for markdown2confluence
+    -k, --skip-header-line     Enable skip header line mode
     -m, --modified-since int   Only upload files that have modifed in the past n minutes
         --parent string        Optional parent page to nest content under
+    -o, --origin               Optional. If specified it will be used as a header notice to the user on where this content originated from
     -p, --password string      Confluence password. (Alternatively set CONFLUENCE_PASSWORD environment variable)
     -s, --space string         Space in which page should be created
     -t, --title string         Set the page title on upload (defaults to filename without extension)
